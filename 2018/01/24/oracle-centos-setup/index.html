@@ -11,7 +11,7 @@
 
     <title>
         
-        BIT교육센터 | Class06&#39;s Blog
+        oracle-centos-setup - BIT교육센터 | Class06&#39;s Blog
         
     </title>
 
@@ -59,7 +59,7 @@
                     <span>HOME</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>TAGS</span>
@@ -80,6 +80,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#centos6-oracle-setup"><span class="toc-text">centos6 oracle setup</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-network-setting"><span class="toc-text">1.network setting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ui-setting"><span class="toc-text">2.ui setting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-oracle-ready"><span class="toc-text">3.oracle ready</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-swap-O��"><span class="toc-text">4.swap Ȯ��</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-oracle-setup"><span class="toc-text">5.oracle setup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-oracle-http-setup"><span class="toc-text">6.oracle http setup</span></a></li></ol></li></ol></li></ol>
+</div>
     
 </div>
 
@@ -106,75 +110,55 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        oracle-centos-setup
+    </div>
 
-<div class="archives-container">
-
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
-                    <span class="tag-text">2018</span>
-                </span>
-    <ul>
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-01-24 18:12:52</span></span>
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>01-24</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/01/24/oracle-centos-setup/">
-                        <span>
-                            oracle-centos-setup
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="centos6-oracle-setup"><a href="#centos6-oracle-setup" class="headerlink" title="centos6 oracle setup"></a><a href="#centos6-oracle-setup" title="centos6 oracle setup"></a>centos6 oracle setup</h1><ol>
+<li>network setting</li>
+<li>ui setting</li>
+<li>oracle ready</li>
+<li>swap Ȯ��</li>
+<li>oracle setup</li>
+<li>oracle http setup</li>
+</ol>
+<h3 id="1-network-setting"><a href="#1-network-setting" class="headerlink" title="1.network setting"></a><a href="#1-network-setting" title="1.network setting"></a>1.network setting</h3><p>/etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<pre><code>ONBOOT=yes
+</code></pre><p>service network restart</p>
+<p>yum repolist</p>
+<p>yum update -y</p>
+<p>yum install -y nano</p>
+<h3 id="2-ui-setting"><a href="#2-ui-setting" class="headerlink" title="2.ui setting"></a><a href="#2-ui-setting" title="2.ui setting"></a>2.ui setting</h3><p>yum groupinstall ��X Window System�� ��Desktop�� ��Fonts�� ��Korean Support��</p>
+<p>sed -i ��s/id:3:initdefault:/id:5:initdefault:/�� /etc/inittab</p>
+<h3 id="3-oracle-ready"><a href="#3-oracle-ready" class="headerlink" title="3.oracle ready"></a><a href="#3-oracle-ready" title="3.oracle ready"></a>3.oracle ready</h3><p>vi /etc/hosts</p>
+<pre><code>127.0.0.1 localhost.localdomain localhost hostname.domain hostname
+</code></pre><p>yum install libaio bc flex</p>
+<p>wget ~~~/oracle-xe-11.2.0-1.0.x86_64.rpm.zip</p>
+<p>unzip -q oracle-xe-11.2.0-1.0.x86_64.rpm.zip</p>
+<h3 id="4-swap-O��"><a href="#4-swap-O��" class="headerlink" title="4.swap Ȯ��"></a><a href="#4-swap-Ȯ��" title="4.swap Ȯ��"></a>4.swap Ȯ��</h3><p>dd if=/dev/zero of=/home/swapfile bs=1024 count=100m</p>
+<p>mkswap /home/swapfile</p>
+<p>swapon /home/swapfile</p>
+<h3 id="5-oracle-setup"><a href="#5-oracle-setup" class="headerlink" title="5.oracle setup"></a><a href="#5-oracle-setup" title="5.oracle setup"></a>5.oracle setup</h3><p>rpm -ivh oracle-xe-11.2.0-1.0.x86_64.rpm</p>
+<p>/etc/init.d/oracle-xe configure</p>
+<p>. /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh</p>
+<h3 id="6-oracle-http-setup"><a href="#6-oracle-http-setup" class="headerlink" title="6.oracle http setup"></a><a href="#6-oracle-http-setup" title="6.oracle http setup"></a>6.oracle http setup</h3><p>sqlplus /nolog</p>
+<p>connect sys/oracle as sysdba</p>
+<p>EXEC DBMS_XDB.SETLISTENERLOCALACCESS(FALSE);</p>
 
-    </ul>
-</div>
-
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2015">
-                    <span class="tag-text">2015</span>
-                </span>
-    <ul>
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>12-31</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2015/12/31/hexoGettingStarted/">
-                        <span>
-                            hexoGettingStarted
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>01-01</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2015/01/01/hello-world/">
-                        <span>
-                            Hello World
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-
-    </ul>
-</div>
-
+        <div id="comment-container">
+        </div>
+    </div>
 </div>
     </div>
 </div>
@@ -222,7 +206,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = ""
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
