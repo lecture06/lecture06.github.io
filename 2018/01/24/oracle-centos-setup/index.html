@@ -82,7 +82,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#centos6-oracle-setup"><span class="toc-text">centos6 oracle setup</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-network-setting"><span class="toc-text">1.network setting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ui-setting"><span class="toc-text">2.ui setting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-oracle-ready"><span class="toc-text">3.oracle ready</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-swap-확보"><span class="toc-text">4.swap 확보</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-oracle-setup"><span class="toc-text">5.oracle setup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-oracle-http-setup"><span class="toc-text">6.oracle http setup</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-network-setting"><span class="toc-text">1.network setting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ui-setting"><span class="toc-text">2.ui setting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-oracle-ready"><span class="toc-text">3.oracle ready</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-swap-확보"><span class="toc-text">4.swap 확보</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-oracle-setup"><span class="toc-text">5.oracle setup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-oracle-http-setup"><span class="toc-text">6.oracle http setup</span></a></li></ol>
 </div>
     
 </div>
@@ -124,7 +124,8 @@
 </span>
     </div>
     <div class="post-content ">
-        <h1 id="centos6-oracle-setup"><a href="#centos6-oracle-setup" class="headerlink" title="centos6 oracle setup"></a><a href="#centos6-oracle-setup" title="centos6 oracle setup"></a>centos6 oracle setup</h1><ol>
+        <p>##centos6 oracle setup</p>
+<ol>
 <li>network setting</li>
 <li>ui setting</li>
 <li>oracle ready</li>
@@ -132,26 +133,26 @@
 <li>oracle setup</li>
 <li>oracle http setup</li>
 </ol>
-<h3 id="1-network-setting"><a href="#1-network-setting" class="headerlink" title="1.network setting"></a><a href="#1-network-setting" title="1.network setting"></a>1.network setting</h3><p>/etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<h3 id="1-network-setting"><a href="#1-network-setting" class="headerlink" title="1.network setting"></a>1.network setting</h3><p>/etc/sysconfig/network-scripts/ifcfg-eth0</p>
 <pre><code>ONBOOT=yes
 </code></pre><p>service network restart</p>
 <p>yum repolist</p>
 <p>yum update -y</p>
 <p>yum install -y nano</p>
-<h3 id="2-ui-setting"><a href="#2-ui-setting" class="headerlink" title="2.ui setting"></a><a href="#2-ui-setting" title="2.ui setting"></a>2.ui setting</h3><p>yum groupinstall “X Window System” “Desktop” “Fonts” “Korean Support”</p>
+<h3 id="2-ui-setting"><a href="#2-ui-setting" class="headerlink" title="2.ui setting"></a>2.ui setting</h3><p>yum groupinstall “X Window System” “Desktop” “Fonts” “Korean Support”</p>
 <p>sed -i ‘s/id:3:initdefault:/id:5:initdefault:/’ /etc/inittab</p>
-<h3 id="3-oracle-ready"><a href="#3-oracle-ready" class="headerlink" title="3.oracle ready"></a><a href="#3-oracle-ready" title="3.oracle ready"></a>3.oracle ready</h3><p>vi /etc/hosts</p>
+<h3 id="3-oracle-ready"><a href="#3-oracle-ready" class="headerlink" title="3.oracle ready"></a>3.oracle ready</h3><p>vi /etc/hosts</p>
 <pre><code>127.0.0.1 localhost.localdomain localhost hostname.domain hostname
 </code></pre><p>yum install libaio bc flex</p>
 <p>wget ~~~/oracle-xe-11.2.0-1.0.x86_64.rpm.zip</p>
 <p>unzip -q oracle-xe-11.2.0-1.0.x86_64.rpm.zip</p>
-<h3 id="4-swap-확보"><a href="#4-swap-확보" class="headerlink" title="4.swap 확보"></a><a href="#4-swap-확보" title="4.swap 확보"></a>4.swap 확보</h3><p>dd if=/dev/zero of=/home/swapfile bs=1024 count=100m</p>
+<h3 id="4-swap-확보"><a href="#4-swap-확보" class="headerlink" title="4.swap 확보"></a>4.swap 확보</h3><p>dd if=/dev/zero of=/home/swapfile bs=1024 count=100m</p>
 <p>mkswap /home/swapfile</p>
 <p>swapon /home/swapfile</p>
-<h3 id="5-oracle-setup"><a href="#5-oracle-setup" class="headerlink" title="5.oracle setup"></a><a href="#5-oracle-setup" title="5.oracle setup"></a>5.oracle setup</h3><p>rpm -ivh oracle-xe-11.2.0-1.0.x86_64.rpm</p>
+<h3 id="5-oracle-setup"><a href="#5-oracle-setup" class="headerlink" title="5.oracle setup"></a>5.oracle setup</h3><p>rpm -ivh oracle-xe-11.2.0-1.0.x86_64.rpm</p>
 <p>/etc/init.d/oracle-xe configure</p>
 <p>. /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh</p>
-<h3 id="6-oracle-http-setup"><a href="#6-oracle-http-setup" class="headerlink" title="6.oracle http setup"></a><a href="#6-oracle-http-setup" title="6.oracle http setup"></a>6.oracle http setup</h3><p>sqlplus /nolog</p>
+<h3 id="6-oracle-http-setup"><a href="#6-oracle-http-setup" class="headerlink" title="6.oracle http setup"></a>6.oracle http setup</h3><p>sqlplus /nolog</p>
 <p>connect sys/oracle as sysdba</p>
 <p>EXEC DBMS_XDB.SETLISTENERLOCALACCESS(FALSE);</p>
 
