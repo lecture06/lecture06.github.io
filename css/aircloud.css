@@ -1190,5 +1190,5 @@ pre .javascript .function {
   text-indent: 0;
 }
 #toc {
-  border-top: 5px solid gray;
+  background-color:#dddddd;
 }
