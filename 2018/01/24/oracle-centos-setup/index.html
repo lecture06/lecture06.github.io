@@ -139,22 +139,14 @@
 </span>
     </div>
     <div class="post-content ">
-        <blockquote>
-</blockquote>
-<h2 id="centos6-oracle-setup"><a href="#centos6-oracle-setup" class="headerlink" title="centos6 oracle setup"></a>centos6 oracle setup</h2><ol>
-<li><p>network setting</p>
-</li>
-<li><p>ui setting</p>
-</li>
-<li><p>oracle ready</p>
-</li>
-<li><p>swap 확보</p>
-</li>
-<li><p>oracle setup</p>
-</li>
-<li><p>oracle http setup</p>
-</li>
-</ol>
+        <h2 id="centos6-oracle-setup"><a href="#centos6-oracle-setup" class="headerlink" title="centos6 oracle setup"></a>centos6 oracle setup</h2><ul>
+<li>network setting</li>
+<li>ui setting</li>
+<li>oracle ready</li>
+<li>swap 확보</li>
+<li>oracle setup</li>
+<li>oracle http setup</li>
+</ul>
 <blockquote>
 </blockquote>
 <h3 id="1-network-setting"><a href="#1-network-setting" class="headerlink" title="1.network setting"></a>1.network setting</h3><p>/etc/sysconfig/network-scripts/ifcfg-eth0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ONBOOT=yes</span><br></pre></td></tr></table></figure></p>
@@ -196,6 +188,8 @@
 <h3 id="6-oracle-http-setup"><a href="#6-oracle-http-setup" class="headerlink" title="6.oracle http setup"></a>6.oracle http setup</h3><p>sqlplus /nolog</p>
 <p>connect sys/oracle as sysdba</p>
 <p>EXEC DBMS_XDB.SETLISTENERLOCALACCESS(FALSE);</p>
+<blockquote>
+</blockquote>
 
         
         <div id="comment-container">
