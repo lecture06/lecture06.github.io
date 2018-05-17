@@ -82,7 +82,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#struts2-Tutorial"><span class="toc-text">struts2 Tutorial</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#�⺻-����"><span class="toc-text">�⺻ ����</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#web-xml"><span class="toc-text">web.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#struts-xml"><span class="toc-text">[struts.xml]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#struts-xml-1"><span class="toc-text">struts.xml</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#���-����"><span class="toc-text">��� ����</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Interceptor"><span class="toc-text">Interceptor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#��T����2����-����-�޾ƿ���"><span class="toc-text">��Ʈ����2���� ���� �޾ƿ���</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#���o�-������-�Է���-���"><span class="toc-text">���ǿ� ������ �Է��� ���</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#U-����-�˰�-�ִ�-���"><span class="toc-text">Ű ���� �˰� �ִ� ���</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#U-����-�𸣰�-�ִ�-���"><span class="toc-text">Ű ���� �𸣰� �ִ� ���</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#����-�����ϱ�"><span class="toc-text">���� �����ϱ�</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#struts2-Tutorial"><span class="toc-text">struts2 Tutorial</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#기본-문법"><span class="toc-text">기본 문법</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#web-xml"><span class="toc-text">web.xml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#struts-xml"><span class="toc-text">[struts.xml]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#struts-xml-1"><span class="toc-text">struts.xml</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#고급-문법"><span class="toc-text">고급 문법</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Interceptor"><span class="toc-text">Interceptor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#스트럿츠2에서-세션-받아오기"><span class="toc-text">스트럿츠2에서 세션 받아오기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#세션에-내용을-입력할-경우"><span class="toc-text">세션에 내용을 입력할 경우</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#키-값을-알고-있는-경우"><span class="toc-text">키 값을 알고 있는 경우</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#키-값을-모르고-있는-경우"><span class="toc-text">키 값을 모르고 있는 경우</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#세션-삭제하기"><span class="toc-text">세션 삭제하기</span></a></li></ol></li></ol></li></ol>
 </div>
     
 </div>
@@ -134,7 +134,7 @@
 <p><a href="https://struts.apache.org/" title="https://struts.apache.org/" target="_blank" rel="noopener">https://struts.apache.org/</a></p>
 <p><a href="https://struts.apache.org/getting-started/" title="https://struts.apache.org/getting-started/" target="_blank" rel="noopener">https://struts.apache.org/getting-started/</a></p>
 </blockquote>
-<h3 id="�⺻-����"><a href="#�⺻-����" class="headerlink" title="�⺻ ����"></a>�⺻ ����</h3><h4 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h4><pre><code>&lt;display-name&gt;Struts2&lt;/display-name&gt;
+<h3 id="기본-문법"><a href="#기본-문법" class="headerlink" title="기본 문법"></a>기본 문법</h3><h4 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h4><pre><code>&lt;display-name&gt;Struts2&lt;/display-name&gt;
 
 &lt;filter&gt;
 &lt;filter-name&gt;struts2&lt;/filter-name&gt;
@@ -154,55 +154,55 @@
 &lt;struts&gt;
 &lt;/struts&gt;
 #### struts.properties ####
-#���ڵ� ����ü�踦 �����Ѵ�.
-struts.i18n.encoding=euc-kr (����Ʈ:UTF-8)
+#인코딩 문자체계를 설정한다.
+struts.i18n.encoding=euc-kr (디폴트:UTF-8)
 
-#�׼��� Ȯ���ڸ� �����Ѵ�. ��ǥ�� ���� ���� ������ �� �ִ�.
-struts.action.extension=action (����Ʈ:action)
+#액션의 확장자를 지정한다. 쉼표로 여러 개를 지정할 수 있다.
+struts.action.extension=action (디폴트:action)
 
-#URL���� �׼� �޼ҵ带 ������ �� �ֵ��� �����Ѵ�.
-#&apos;�׼�!�޼ҵ�.action&apos; �Ǵ� &apos;�׼�.action?method=�޼ҵ�&apos;
-struts.enable.DynamicMethodInvocation=false (����Ʈ:true)
+#URL에서 액션 메소드를 지정할 수 있도록 설정한다.
+#&apos;액션!메소드.action&apos; 또는 &apos;액션.action?method=메소드&apos;
+struts.enable.DynamicMethodInvocation=false (디폴트:true)
 
-#���� Ÿ�ӽ� �����Ѵ�. ���� �� ������ �����Ѵ�.
+#개발 타임시 설정한다. 다음 두 가지를 포함한다.
 #struts.i18n.reload=true
 #struts.configuration.xml.reload=true
-struts.devMode=true (����Ʈ:false)
+struts.devMode=true (디폴트:false)
 </code></pre><h4 id="struts-xml-1"><a href="#struts-xml-1" class="headerlink" title="struts.xml"></a>struts.xml</h4><pre><code>&lt;struts&gt;
 &lt;constant name=&quot;struts.i18n.encoding&quot; value=&quot;euc-kr&quot;/&gt;
 &lt;constant name=&quot;struts.action.extension&quot; value=&quot;action&quot;/&gt;
 &lt;constant name=&quot;struts.enable.DynamicMethodInvocation&quot; value=&quot;true&quot; /&gt;
 &lt;constant name=&quot;struts.devMode&quot; value=&quot;true&quot; /&gt;
 &lt;/struts&gt;
-</code></pre><h3 id="���-����"><a href="#���-����" class="headerlink" title="��� ����"></a>��� ����</h3><h4 id="Interceptor"><a href="#Interceptor" class="headerlink" title="Interceptor"></a>Interceptor</h4><ul>
+</code></pre><h3 id="고급-문법"><a href="#고급-문법" class="headerlink" title="고급 문법"></a>고급 문법</h3><h4 id="Interceptor"><a href="#Interceptor" class="headerlink" title="Interceptor"></a>Interceptor</h4><ul>
 <li>extends AbstractInterceptor { }<ol>
 <li>com.opensymphony.xwork2.interceptor.AbstractInterceptor</li>
-<li>intercept() �޼ҵ� �������̵� (�ʼ�)</li>
+<li>intercept() 메소드 오버라이드 (필수)</li>
 </ol>
 </li>
 <li>implements Interceptor { }<ol>
-<li>public void init() : �� ���ø����̼��� deploy �� �� �� �� ����</li>
-<li>public String intercept(ActionInvocation invocation) : ��û�� ���� ����</li>
-<li>public void destroy() : (���� ���� ����)</li>
+<li>public void init() : 웹 애플리케이션이 deploy 될 때 한 번 실행</li>
+<li>public String intercept(ActionInvocation invocation) : 요청시 마다 실행</li>
+<li>public void destroy() : (실행 되지 않음)</li>
 </ol>
 </li>
 <li>extends MethodFilterInterceptor { }<ol>
 <li>com.opensymphony.xwork2.interceptor.MethodFilterInterceptor</li>
-<li>���ͼ��� &lt;���� ����&gt; �Ǵ� ���� �޼ҵ带 ������ �� ��</li>
-<li>doIntercept() �޼ҵ� �������̵� (�ʼ�)</li>
+<li>인터셉터 &lt;적용 제외&gt; 또는 적용 메소드를 지정할 수 있</li>
+<li>doIntercept() 메소드 오버라이드 (필수)</li>
 </ol>
 </li>
 <li>implements ServletRequestAware {}<blockquote>
-<p>//ServetRequestAware ����<br>private HttpServletRequest request;<br>public void setServletRequest(HttpServletRequest request) {<br>this.request = request;</p>
+<p>//ServetRequestAware 구현<br>private HttpServletRequest request;<br>public void setServletRequest(HttpServletRequest request) {<br>this.request = request;</p>
 </blockquote>
-<h4 id="��T����2����-����-�޾ƿ���"><a href="#��T����2����-����-�޾ƿ���" class="headerlink" title="��Ʈ����2���� ���� �޾ƿ���"></a>��Ʈ����2���� ���� �޾ƿ���</h4><ul>
-<li>��Ʈ����2������ ���� �������� ������ �����ϱ� ������ �޾ƿö����� ������ ���� �ʰ�ü�� ����ش�.</li>
+<h4 id="스트럿츠2에서-세션-받아오기"><a href="#스트럿츠2에서-세션-받아오기" class="headerlink" title="스트럿츠2에서 세션 받아오기"></a>스트럿츠2에서 세션 받아오기</h4><ul>
+<li>스트럿츠2에서는 세션 데이터을 맵으로 관리하기 때문에 받아올때에도 다음과 같이 맵객체에 담아준다.</li>
 <li>ActionContext con = ActionContext.getContext();</li>
-<li>Map session = con.getSession();<h4 id="���o�-������-�Է���-���"><a href="#���o�-������-�Է���-���" class="headerlink" title="���ǿ� ������ �Է��� ���"></a>���ǿ� ������ �Է��� ���</h4></li>
-<li>map�� �����͸� �ִ� �Ͱ� �����ϴ�. Ű�����δ� object�� ����ص� �ȴ�. session.put( ��Ű���� , ���� );</li>
-<li>���� ���� ������ �ִ��� �˰��� �� ���<h4 id="U-����-�˰�-�ִ�-���"><a href="#U-����-�˰�-�ִ�-���" class="headerlink" title="Ű ���� �˰� �ִ� ���"></a>Ű ���� �˰� �ִ� ���</h4></li>
-<li>key���� �˰� ������쿡�� key������ �ٷ� �������� �ȴ�. Object value = session.get(��Ű����);<h4 id="U-����-�𸣰�-�ִ�-���"><a href="#U-����-�𸣰�-�ִ�-���" class="headerlink" title="Ű ���� �𸣰� �ִ� ���"></a>Ű ���� �𸣰� �ִ� ���</h4></li>
-<li>key���� �𸣴� ��쿡�� ���ǿ� �����ϴ� ��� Ű���� �����ͼ� �ش� �����͸� ���� �����´�.<br>Set set = session.keySet();<br>Iterator ite = set.iterator();<br>while(ite.hasNext()) { String key = (String) ite.next(); Object value = session.get(key); }<h4 id="����-�����ϱ�"><a href="#����-�����ϱ�" class="headerlink" title="���� �����ϱ�"></a>���� �����ϱ�</h4>session���� �ش� Ű���� �ش��ϴ� �����͸� �����մϴ�.<br>session.remove(��Ű����);</li>
+<li>Map session = con.getSession();<h4 id="세션에-내용을-입력할-경우"><a href="#세션에-내용을-입력할-경우" class="headerlink" title="세션에 내용을 입력할 경우"></a>세션에 내용을 입력할 경우</h4></li>
+<li>map에 데이터를 넣는 것과 동일하다. 키값으로는 object를 사용해도 된다. session.put( “키값” , 내용 );</li>
+<li>현재 무슨 세션이 있는지 알고자 할 경우<h4 id="키-값을-알고-있는-경우"><a href="#키-값을-알고-있는-경우" class="headerlink" title="키 값을 알고 있는 경우"></a>키 값을 알고 있는 경우</h4></li>
+<li>key값을 알고 있을경우에는 key값으로 바로 가져오면 된다. Object value = session.get(“키값”);<h4 id="키-값을-모르고-있는-경우"><a href="#키-값을-모르고-있는-경우" class="headerlink" title="키 값을 모르고 있는 경우"></a>키 값을 모르고 있는 경우</h4></li>
+<li>key값을 모르는 경우에는 세션에 존재하는 모든 키값을 가져와서 해당 데이터를 몽땅 가져온다.<br>Set set = session.keySet();<br>Iterator ite = set.iterator();<br>while(ite.hasNext()) { String key = (String) ite.next(); Object value = session.get(key); }<h4 id="세션-삭제하기"><a href="#세션-삭제하기" class="headerlink" title="세션 삭제하기"></a>세션 삭제하기</h4>session에서 해당 키값에 해당하는 데이터를 제거합니다.<br>session.remove(“키값”);</li>
 </ul>
 </li>
 </ul>
