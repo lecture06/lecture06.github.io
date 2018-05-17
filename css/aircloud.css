@@ -1190,5 +1190,8 @@ pre .javascript .function {
   text-indent: 0;
 }
 #toc {
-  background-color:#dddddd;
+  background-color: #dddddd;
+}
+code {
+  color: gray;
 }
