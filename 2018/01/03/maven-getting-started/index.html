@@ -82,7 +82,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#maven-getting-started"><span class="toc-text">maven-getting-started</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#setting-checked"><span class="toc-text">setting checked</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#goal"><span class="toc-text">goal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-project"><span class="toc-text">create project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compile"><span class="toc-text">compile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#test"><span class="toc-text">test</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jar-package"><span class="toc-text">jar package</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#batch"><span class="toc-text">batch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-reference"><span class="toc-text">create reference</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clear"><span class="toc-text">clear</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#change-java-compile-version"><span class="toc-text">change java compile version</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#running"><span class="toc-text">running</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#etc"><span class="toc-text">etc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-mvnw"><span class="toc-text">create mvnw</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#maven-getting-started"><span class="toc-text">maven-getting-started</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#setting-checked"><span class="toc-text">setting checked</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#goal"><span class="toc-text">goal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-project"><span class="toc-text">create project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compile"><span class="toc-text">compile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#test"><span class="toc-text">test</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jar-package"><span class="toc-text">jar package</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add-local-repository"><span class="toc-text">add local repository</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-reference"><span class="toc-text">create reference</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clear"><span class="toc-text">clear</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#change-java-compile-version"><span class="toc-text">change java compile version</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#running"><span class="toc-text">running</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#etc"><span class="toc-text">etc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-mvnw"><span class="toc-text">create mvnw</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -120,7 +120,7 @@
         
         <span class="attr">Tags：/
         
-        <a class="tag" href="/tags/#maven," title="maven,">maven,</a>
+        <a class="tag" href="/tags/#maven" title="maven">maven</a>
         <span>/</span>
         
         <a class="tag" href="/tags/#mvn" title="mvn">mvn</a>
@@ -133,43 +133,50 @@
 </span>
     </div>
     <div class="post-content ">
-        <h2 id="maven-getting-started"><a href="#maven-getting-started" class="headerlink" title="maven-getting-started"></a>maven-getting-started</h2><ul>
-<li><p><a href="quick-started">https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html</a></p>
-</li>
-<li><p><a href="getting-started">https://maven.apache.org/guides/getting-started/index.html</a></p>
-</li>
-</ul>
-<h3 id="setting-checked"><a href="#setting-checked" class="headerlink" title="setting checked"></a>setting checked</h3><p>mvn –version</p>
-<h3 id="goal"><a href="#goal" class="headerlink" title="goal"></a>goal</h3><p>validate: <code>validate the project is correct and all necessary information is available</code></p>
-<p>compile: <code>compile the source code of the project</code></p>
-<p>test: <code>test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed</code></p>
-<p>package: <code>take the compiled code and package it in its distributable format, such as a JAR.</code></p>
-<p>integration-test: <code>process and deploy the package if necessary into an environment where integration tests can be run</code></p>
-<p>verify: <code>run any checks to verify the package is valid and meets quality criteria</code></p>
-<p>install: <code>install the package into the local repository, for use as a dependency in other projects locally</code></p>
-<p>deploy</p>
-<p>clean: <code>cleans up artifacts created by prior builds</code></p>
-<p>site: <code>generates site documentation for this project</code></p>
-<h3 id="create-project"><a href="#create-project" class="headerlink" title="create project"></a>create project</h3><p>mvn archetype:generate</p>
+        <h2 id="maven-getting-started"><a href="#maven-getting-started" class="headerlink" title="maven-getting-started"></a>maven-getting-started</h2><pre><code>[https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html](quick-started)
+
+[https://maven.apache.org/guides/getting-started/index.html](getting-started)
+</code></pre><h3 id="setting-checked"><a href="#setting-checked" class="headerlink" title="setting checked"></a>setting checked</h3><p>mvn –version</p>
+<h3 id="goal"><a href="#goal" class="headerlink" title="goal"></a>goal</h3><pre><code>validate: validate the project is correct and all necessary information is available
+
+compile: compile the source code of the project
+
+test: test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed
+
+package: take the compiled code and package it in its distributable format, such as a JAR.
+
+integration-test: process and deploy the package if necessary into an environment where integration tests can be run
+
+verify: run any checks to verify the package is valid and meets quality criteria
+
+install: install the package into the local repository, for use as a dependency in other projects locally
+
+deploy
+
+clean: cleans up artifacts created by prior builds
+
+site: generates site documentation for this project
+</code></pre><h3 id="create-project"><a href="#create-project" class="headerlink" title="create project"></a>create project</h3><p>mvn archetype:generate</p>
 <p>mvn archetype:generate -DinteractiveMode=false -DarchetypeArtifactId=maven-archetype-quickstart \<br>-DgroupId={project-packaging} -DartifactId={project-name}</p>
 <h3 id="compile"><a href="#compile" class="headerlink" title="compile"></a>compile</h3><pre><code>mvn compile
 mvn test-compile
 </code></pre><h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><pre><code>mvn test
 </code></pre><h3 id="jar-package"><a href="#jar-package" class="headerlink" title="jar package"></a>jar package</h3><pre><code>mvn package
-</code></pre><h3 id="batch"><a href="#batch" class="headerlink" title="batch"></a>batch</h3><pre><code>mvn install
+</code></pre><h3 id="add-local-repository"><a href="#add-local-repository" class="headerlink" title="add local repository"></a>add local repository</h3><pre><code>mvn install
 </code></pre><h3 id="create-reference"><a href="#create-reference" class="headerlink" title="create reference"></a>create reference</h3><pre><code>mvn site
 </code></pre><h3 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h3><pre><code>mvn clean
 </code></pre><h3 id="change-java-compile-version"><a href="#change-java-compile-version" class="headerlink" title="change java compile version"></a>change java compile version</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">  &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">  &lt;configuration&gt;</span><br><span class="line">    &lt;source&gt;1.8&lt;/source&gt;</span><br><span class="line">    &lt;target&gt;1.8&lt;/target&gt;</span><br><span class="line">    &lt;encoding&gt;UTF-8&lt;/encoding&gt;</span><br><span class="line">  &lt;/configuration&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="running"><a href="#running" class="headerlink" title="running"></a>running</h3><pre><code>java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
 </code></pre><h3 id="etc"><a href="#etc" class="headerlink" title="etc"></a>etc</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mvn archetype:generate \</span><br><span class="line">    -DarchetypeGroupId=org.apache.maven.archetypes \</span><br><span class="line">    -DarchetypeArtifactId=maven-archetype-webapp \</span><br><span class="line">    -DgroupId=com.mycompany.app \</span><br><span class="line">    -DartifactId=my-webapp</span><br></pre></td></tr></table></figure>
-<ul>
-<li>maven-archetype-quickstart</li>
-<li>spring-boot-sample-simple-archetype</li>
-<li>spring-boot-sample-data-jpa-archetype</li>
-<li>spring-boot-sample-actuator-log4j-archetype<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mvn archetype:generate -DinteractiveMode=false -DarchetypeArtifactId=maven-archetype-quickstart \</span><br><span class="line">-DgroupId=&#123;project-packaging&#125; -DartifactId=&#123;project-name&#125;</span><br><span class="line"></span><br><span class="line">mvn archetype:generate -DinteractiveMode=false \</span><br><span class="line">-DarchetypeGroupId=org.springframework.boot -DarchetypeArtifactId=&#123;spring-archetype&#125; \</span><br><span class="line">-DgroupId=&#123;project-packaging&#125; -DartifactId=&#123;project-name&#125;</span><br><span class="line"></span><br><span class="line">mvn archetype:generate -DinteractiveMode=false \</span><br><span class="line">-DarchetypeGroupId=org.springframework.boot -DarchetypeArtifactId=spring-boot-sample-simple-archetype \</span><br><span class="line">-DgroupId=&#123;project-packaging&#125; -DartifactId=&#123;project-name&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<pre><code>maven-archetype-quickstart
+
+spring-boot-sample-simple-archetype
+
+spring-boot-sample-data-jpa-archetype
+
+spring-boot-sample-actuator-log4j-archetype
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mvn archetype:generate -DinteractiveMode=false -DarchetypeArtifactId=maven-archetype-quickstart \</span><br><span class="line">-DgroupId=&#123;project-packaging&#125; -DartifactId=&#123;project-name&#125;</span><br><span class="line"></span><br><span class="line">mvn archetype:generate -DinteractiveMode=false \</span><br><span class="line">-DarchetypeGroupId=org.springframework.boot -DarchetypeArtifactId=&#123;spring-archetype&#125; \</span><br><span class="line">-DgroupId=&#123;project-packaging&#125; -DartifactId=&#123;project-name&#125;</span><br><span class="line"></span><br><span class="line">mvn archetype:generate -DinteractiveMode=false \</span><br><span class="line">-DarchetypeGroupId=org.springframework.boot -DarchetypeArtifactId=spring-boot-sample-simple-archetype \</span><br><span class="line">-DgroupId=&#123;project-packaging&#125; -DartifactId=&#123;project-name&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="create-mvnw"><a href="#create-mvnw" class="headerlink" title="create mvnw"></a>create mvnw</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -N io.takari:maven:wrapper -Dmaven=3.3.3</span><br></pre></td></tr></table></figure>
         
         <div id="comment-container">
